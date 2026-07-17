@@ -294,7 +294,7 @@ RvOmmSubmgr::on_start( void ) noexcept
   this->is_running = false;
   this->ft_rank = 0;
   this->ft.start( this->ft_param );
-  this->sub_db.start_subscriptions( false );
+  this->sub_db.start_subscriptions( false, true, false );
   this->poll.update_time_ns();
   this->tid = this->poll.now_ns;
   if ( is_restart )
