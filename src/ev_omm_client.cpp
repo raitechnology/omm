@@ -2,7 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
+#if ! defined( _MSC_VER ) && ! defined( __MINGW32__ )
 #include <unistd.h>
+#else
+#include <raikv/win.h> /* gethostname via winsock */
+#endif
 #include <raimd/md_msg.h>
 #include <raimd/md_dict.h>
 #include <raimd/cfile.h>
